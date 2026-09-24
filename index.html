@@ -1,317 +1,538 @@
+index.html
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <title>SK Choudhary</title>
+    <style>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         .profile-text {
+    font-size: 60px;
+    line-height: 1.6;
+}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+        }
 
-    <title>DarziPrints | Custom Stitching & Designs</title>
+        /* ===== Header ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd; /* light boundary */
+        }
 
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Main Content ===== */
+        .container {
+            font-size: 60px;
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+}
+
+        /* Left section */
+     .left {
+    width: 30%;
+    display: flex;
+         font-size: 40px;
+    justify-content: center;   /* center profile inside 30% */
+}
+
+
+        .profile-card {
+    text-align: center;        /* center text under photo */
+}
+        .blue-text {
+    color: #1a4fb3;   /* academic blue */
+}
+        .bold-text {
+    font-weight: 600;
+}
+.maroon-text {
+    color: #7a1f2b;
+    font-weight: 600;
+}
+
+      .photo-box {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 15px auto;  /* ensures text comes just below */
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+        .left p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* Right section */
+      .right {
+    width: 70%;
+    text-align: justify;
+    font-size: 20px;      /* matches Image-2 */
+    line-height: 1.7;
+}
+        .right m {
+   text-decoration: underline;
+            color: inherit;
+}
+
+        
+        .right a {
+    text-decoration: underline;
+    font-weight: 600;
+    color: inherit;   /* uses normal text color */
+}
+        .right a:hover {
+    text-decoration: underline;
+}
+
+        .right p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+      
+        .site-title {
+    margin-left: 150px;   /* adjust: 10–30px */
+}
+
+        /* Responsive (optional) */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .left, .right {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
-
 <body>
 
-    <!-- =====================================================
-         HEADER / NAVIGATION
-         ===================================================== -->
+<header>
+    <h1 class="site-title">Suresh</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">CV</a>
+        <a href="Research-Group.html"><span class="blue-text">Research Group</span></a>
+        <a href="Teaching.html">Teaching</a>
+        <a href="Awards.html">Awards</a>
+        <a href="Publications.html">Publications</a>
+    </nav>
+</header>
 
-    <header>
-
-        <h1>DarziPrints</h1>
-
-        <p>Stitching Your Style, Your Way</p>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#designs">Our Designs</a>
-            <a href="#services">What We Offer</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-    </header>
-
-
-    <!-- =====================================================
-         HERO SECTION
-         ===================================================== -->
-
-    <section>
-
-        <h2>Welcome to DarziPrints</h2>
-
-        <h3>Where Your Style Takes Shape</h3>
-
-        <p>
-            Discover beautifully crafted outfits designed with
-            attention to detail, comfort and your personal style.
-        </p>
-
-        <p>
-            From elegant Kurtis to stylish bottoms, we bring
-            your ideas to life through custom stitching and
-            thoughtful designs.
-        </p>
-
-        <a href="#designs">Explore Our Designs</a>
-
-    </section>
-
-
-    <!-- =====================================================
-         FEATURED DESIGNS
-         
-         ADD YOUR 2–3 IMAGES HERE
-         ===================================================== -->
-
-    <section id="designs">
-
-        <h2>Our Featured Designs</h2>
-
-        <p>
-            Explore some of our latest designs and creations.
-        </p>
-
-
-        <!-- IMAGE 1 -->
-
-        <div>
-
-            <img src="images/design1.jpg"
-                 alt="DarziPrints Design 1"
-                 width="300">
-
-            <h3>Elegant Kurti Design</h3>
-
-            <p>
-                A stylish design crafted with attention to
-                detail and a comfortable fit.
-            </p>
-
+<div class="container">
+    <!-- Left Side -->
+    <div class="left">
+    <div class="profile-card">
+        <div class="photo-box">
+            <img src="SK.jpeg" alt="Profile Photo">
         </div>
 
-
-        <!-- IMAGE 2 -->
-
-        <div>
-
-            <img src="images/design2.jpg"
-                 alt="DarziPrints Design 2"
-                 width="300">
-
-            <h3>Contemporary Design</h3>
-
-            <p>
-                A modern look combining simplicity and elegance.
-            </p>
-
-        </div>
-
-
-        <!-- IMAGE 3 -->
-
-        <div>
-
-            <img src="images/design3.jpg"
-                 alt="DarziPrints Design 3"
-                 width="300">
-
-            <h3>Custom Stitching</h3>
-
-            <p>
-                Designs tailored to your preferences and style.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         WHAT WE OFFER
-         ===================================================== -->
-
-    <section id="services">
-
-        <h2>What We Offer</h2>
-
-
-        <div>
-
-            <h3>✦ Stylish Kurtis</h3>
-
-            <p>
-                A variety of Kurti styles designed for different
-                occasions and personal preferences.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>✦ Stylish Bottoms</h3>
-
-            <p>
-                Explore different types of bottoms that complement
-                your Kurti and complete your look.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>✦ Custom Stitching</h3>
-
-            <p>
-                Your design, your measurements and your preferences.
-                We create outfits according to your requirements.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>✦ Attention to Detail</h3>
-
-            <p>
-                From neck designs and sleeves to finishing details,
-                every element is crafted with care.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         OUR COLLECTION
-         ===================================================== -->
-
-    <section>
-
-        <h2>Explore Our Collection</h2>
-
-        <p>
-            At DarziPrints, you can explore a variety of
-            designs and customize them according to your style.
+        <p class="profile-text">
+            <span class="bold-text">Dr. S.K. Choudhary </span><br>
+            Assistant Professor, CSE, <a href="https://www.thapar.edu" target="_blank">TIET Patiala</a><br>
+            PhD, Dept. of CSE - <a href="https://www.iitm.ac.in" target="_blank">IIT Madras</a> <br>
+            <br>
+            <br>
+            <i>Email: suresh.kumar1@thapar.edu</i> <br>
+            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; suresh007@alumni.iitm.ac.in</i>
         </p>
-
-
-        <h3>Kurtis</h3>
-
+    </div>
+</div>
+     <!-- Right Side -->
+    <div class="right">
+    <p>
+        I am an Assistant Professor in the
+        Computer Science and Engineering Department
+        at Thapar Institute of Engineering and Technology (TIET), Patiala.
+        Prior to this, I worked in the Cyber Security Wing at
+        <m href="https://www.stqc.gov.in/" target="_blank">STQC</m>, MeitY (Government of India).
+        I completed my Ph.D. from
+        <span class="blue-text">Indian Institute of Technology Madras</span>,
+        under the supervision of Prof. P. Sreenivasa Kumar.
+    </p>
+    <p>
+        <span class="maroon-text">Research Domains:</span> Artificial Intelligence, Applied Ontology, Natural Language Understanding (NLU)
+    </p>
         <p>
-            Straight Kurtis • A-Line Kurtis • Anarkali Kurtis
-            • Short Kurtis • and more
-        </p>
-
-
-        <h3>Bottoms</h3>
-
+        <span class="maroon-text">Ongoing Research Activities</span>:<br>
+            Currently, I am focused on NLU projects. Applied Ontology also remains my core research interest, and I am looking for a suitable candidate to explore a few promising directions.<br>
+            1. Honey-Prompts for Detecting Malicious AI Interactions<br>
+            2. Repetition-Aware Abstractive Text Summarization<br>
+            3. Adaptive Skill Unlearning  <br>
+            4. Erasing Target and Correlated Knowledge in LLMs
+    </p>
         <p>
-            Different styles of bottoms designed to complement
-            your outfit.
-        </p>
-
-
-        <h3>Neck Designs</h3>
-
-        <p>
-            Choose from a range of elegant and contemporary
-            neck designs.
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         ABOUT DARZIPRINTS
-         ===================================================== -->
-
-    <section id="about">
-
-        <h2>About DarziPrints</h2>
-
-        <p>
-            DarziPrints is about bringing together creativity,
-            personal style and skilled stitching.
-        </p>
-
-        <p>
-            We believe that clothing should reflect your
-            personality. That's why we focus on designs that
-            combine elegance, comfort and individuality.
-        </p>
-
-        <p>
-            Whether you have a design in mind or are looking
-            for inspiration, DarziPrints helps turn your ideas
-            into beautifully crafted outfits.
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         CALL TO ACTION
-         ===================================================== -->
-
-    <section>
-
-        <h2>Have a Design in Mind?</h2>
-
-        <p>
-            Let us help bring your idea to life.
-        </p>
-
-        <a href="#contact">Get in Touch</a>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACT
-         ===================================================== -->
-
-    <section id="contact">
-
-        <h2>Contact DarziPrints</h2>
-
-        <p>
-            Have a question or want to discuss a design?
-            Get in touch with us.
-        </p>
-
-        <p>
-            <strong>Email:</strong>
-            rchoudhary.acad@gmail.com
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-        <p>
-            © 2026 DarziPrints. All Rights Reserved.
-        </p>
-
-        <p>
-            Stitching Your Style, Your Way.
-        </p>
-
-    </footer>
-
+        <span class="maroon-text">Interdisciplinary Project(s)</span>:<br>
+            1. Astro-SSL : At the Crossroads of Astrophysics and Machine Learning<br>
+            (in-collboration with researchers from <a href="https://www.unistra.fr" target="_blank">University of Strasbourg</a> and <a href="https://www.nasa.gov" target="_blank">NASA</a>)   
+    </p>
+</div>
 
 </body>
+</html>
 
+
+Teaching.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teaching</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #222;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+        }
+
+        .content h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #7a1f2b;   /* maroon */
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<div class="content">
+    <h2>Courses Offered</h2>
+
+    <h3>EVEN Semester 2025-26</h3>
+    <ul>
+        <li>UCS415 : Design and Analysis of Algorithms (144 students, offered to second year CSE students)</li></br>
+        <li>TA2405 : Exploratory Data Analysis (17 students, offered to second year students of School of Liberal Arts and Sciences)</li>
+    </ul>
+    <h3>ODD Semester 2025-26</h3>
+    <ul>
+        <li>UCS744 : Autonomous Systems (23 students, offered to final year ME students)</li></br>
+    </ul>
+
+ 
+</div>
+
+</body>
+</html>
+
+
+upload SK.jpeg
+
+
+Research-Group.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research Group</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #222;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+        }
+
+        .content h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #7a1f2b;   /* maroon */
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<div class="content">
+    <h2>Ongoing Supervision</h2>
+
+    <h3>Doctoral Student</h3>
+    <ul>
+        <li>Akanksha Saxena - Research Topic: Stuttered Speech (in joint supervision)</li>
+    </ul>
+
+    <h3>Undergraduate (B.Tech) Final Year Projects</h3>
+    <ul>
+        <li>Malishka's Group – Project Title: Repetition-Aware Evaluation and Decoding Optimization for Abstractive Text Summarization</li>
+        <li>Sharon's Group – Project Title: Adaptive Skill Unlearning in Language Models via Intervention and Abstention </li>
+        <li>Rishabh's Group – Project Title: Erasing Target and Correlated Knowledge in LLMs </li>
+    </ul>
+    <h3>Research Guidance to Enthusiastic Non-Final Year (BTech) Students</h3>
+    <ul>
+        <li>Angad Singh – Project Title: Honey-Prompts for Detecting Malicious AI Interactions</li>
+    </ul>
+</div>
+
+</body>
+</html>
+
+README.md
+
+# sk-choudhary.github.io
+I am an Assistant Professor in the Department of Computer Science and Engineering at TIET Patiala (aka Thapar University).
+
+Publications.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal Publications</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+        .blue-text {
+    color: #1a4fb3;   /* academic blue */
+}
+
+        header a {
+            text-decoration: none;
+            color: #222;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: justify;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+        }
+
+        .pub-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<div class="content">
+    <h2>Journal Publications</h2>
+
+    <ol class="pub-list">
+        <li>
+            <span class="blue-text">Kumar, Suresh</span>, and Kumar, PS (2022). KLAUS-Tr: Knowledge & Learning-based Unit Focused Arithmetic Word Problem Solver for Transfer Cases. <a href="https://www.cambridge.org/core/journals/natural-language-engineering" target="_blank">
+            Natural Language Engineering</a>, 30(1), 1-36, https://doi.org/10.1017/S1351324922000511.
+        </li>
+        <li>
+            <span class="blue-text">Kumar, Suresh</span>, and Kumar, P. Sreenivasa (2024). Validity checking and repairing of machine-generated transfer-type word problems. <a href="https://www.iospress.com/catalog/journals/applied-ontology" target="_blank">
+            Applied Ontology
+        </a>, 19(4), 368-388, https://doi.org/10.1177/15705838241303829.
+        </li>
+        <li>
+            <span class="blue-text">Kumar, Suresh</span>, and Kumar, P. Sreenivasa (2024). Generating and Solving Complex Transfer Type Arithmetic Word Problems: An Ontological Approach, <a href="https://www.semantic-web-journal.net/" target="_blank">
+            Semantic Web Journal
+        </a>, Accepted on: 09-02-2026.
+    </ol>
+
+    <h2>Conference Publications</h2>
+
+    <ol class="pub-list">
+        <li>
+            Akshay Gupta, Suresh Kumar, and Sreenivasa Kumar P. 2023. Solving age-word problems using domain ontology and BERT.  In Proceedings of the 6th Joint International Conference on Data Science & Management of Data (10th ACM IKDD CODS and 28th COMAD) (CODS-COMAD '23). Association for Computing Machinery, New York, NY, USA, 95–103. https://doi.org/10.1145/3570991.3571058 (nominated for best paper).
+        </li>
+    </ol>
+
+    <h2>Extended Abstract/Workshop Papers</h2>
+    <ol class="pub-list">
+        <li>
+            Suresh Kumar and P Sreenivasa Kumar. 2022. Solving TC-type AWPs using external knowledge & learning. In 5th Joint International Conference on Data Science & Management of Data (9th ACM IKDD CODS and 27th COMAD) (CODS-COMAD 2022). Association for Computing Machinery, New York, NY, USA, 286–287. https://doi.org/10.1145/3493700.3493744
+        </li>
+        <li>
+        Suresh Kumar and Sreenivasa Kumar P. 2023. Using domain ontology to identify consistent and inconsistent cases from LSTM-generated transfer type AWPs. In Proceedings of the 6th Joint International Conference on Data Science & Management of Data (10th ACM IKDD CODS and 28th COMAD) (CODS-COMAD '23). Association for Computing Machinery, New York, NY, USA, 289–290. https://doi.org/10.1145/3570991.3571028
+        </li>
+    </ol>
+
+    <h2>Doctoral Colloquiums Attended</h2>
+    <ol class="pub-list">
+        <li>
+           S Kumar, PS Kumar. (2021). Knowledge & learning based TC-AWP solver and its extension to identify inconsistent cases. https://www.idrbt.ac.in/11th-idrbt-doctoral-colloquium/
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
+
+
+Awards.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teaching</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #222;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: justify;
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+        }
+
+        .content h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #7a1f2b;   /* maroon */
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<div class="content">
+    <h2>Awards</h2>
+
+    <h3>Honourable Mention (Research Track- Full Length Paper)</h3>
+    <ul>
+        <li>Akshay Gupta, Suresh Kumar, and Sreenivasa Kumar P. 2023. Solving age-word problems using domain ontology and BERT.  In Proceedings of the 6th Joint International Conference on Data Science & Management of Data (10th ACM IKDD CODS and 28th COMAD) (CODS-COMAD '23). Association for Computing Machinery, New York, NY, USA, 95–103. https://doi.org/10.1145/3570991.3571058 </li></br>
+    </ul>
+</div>
+
+</body>
 </html>
