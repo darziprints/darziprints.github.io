@@ -1,1 +1,690 @@
-Add
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Darzi Prints | Kurti Collection</title>
+
+    <style>
+        /* ===== General Styling ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* ===== Header ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Main Product Layout ===== */
+        .product-container {
+            display: flex;
+            gap: 50px;
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 40px;
+            align-items: flex-start;
+        }
+
+        /* ===== LEFT: Product Details ===== */
+        .product-details {
+            width: 38%;
+            padding: 20px 0;
+        }
+
+        .product-details h2 {
+            font-size: 32px;
+            margin: 0 0 12px;
+            color: #4a2929;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 26px;
+            font-weight: bold;
+            color: #7a1f2b;
+            margin: 20px 0;
+        }
+
+        .option-group {
+            margin: 25px 0;
+        }
+
+        .option-group label,
+        .option-title {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* ===== Color Options ===== */
+        .color-options {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .color-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .color-option input {
+            accent-color: #7a1f2b;
+        }
+
+        .color-option:has(input:checked) {
+            border-color: #7a1f2b;
+            background-color: #faf3f3;
+        }
+
+        /* ===== Size Options ===== */
+        .size-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            min-width: 48px;
+            height: 45px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .size-option:hover {
+            border-color: #7a1f2b;
+        }
+
+        .size-option.selected {
+            background-color: #7a1f2b;
+            color: white;
+            border-color: #7a1f2b;
+        }
+
+        /* ===== Order Button ===== */
+        .order-button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #7a1f2b;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .order-button:hover {
+            background-color: #5e1720;
+        }
+
+        .order-message {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border: 1px solid #d9c1c1;
+            border-radius: 6px;
+            background: #faf3f3;
+            line-height: 1.8;
+        }
+
+        /* ===== RIGHT: Image Gallery ===== */
+        .product-gallery {
+            width: 62%;
+            min-width: 0;
+        }
+
+        .main-image-container {
+            position: relative;
+            width: 100%;
+            height: 650px;
+            background-color: #f8f5f2;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* ===== Image Navigation Arrows ===== */
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-arrow:hover {
+            background-color: #7a1f2b;
+            color: white;
+        }
+
+        .prev-arrow {
+            left: 15px;
+        }
+
+        .next-arrow {
+            right: 15px;
+        }
+
+        .image-counter {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* ===== Thumbnail Images ===== */
+        .thumbnail-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 115px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #f8f5f2;
+            padding: 0;
+        }
+
+        .thumbnail.active {
+            border-color: #7a1f2b;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+                padding: 20px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .product-container {
+                flex-direction: column-reverse;
+                padding: 0 20px;
+                gap: 25px;
+                margin: 25px auto;
+            }
+
+            .product-details,
+            .product-gallery {
+                width: 100%;
+            }
+
+            .main-image-container {
+                height: 500px;
+            }
+
+            .product-details h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .main-image-container {
+                height: 380px;
+            }
+
+            .thumbnail {
+                width: 75px;
+                height: 90px;
+            }
+
+            .gallery-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 23px;
+            }
+
+            .product-container {
+                padding: 0 15px;
+            }
+
+            .product-details h2 {
+                font-size: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+
+        <h1>Darzi Prints</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Kurti.html">Kurti</a>
+            <a href="Bottom.html">Bottom</a>
+            <a href="Other-Products.html">Other Products</a>
+            <a href="Upcoming-Products.html">Upcoming Products</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ===== PRODUCT CONTAINER ===== -->
+    <div class="product-container">
+
+        <!-- ==============================================
+             LEFT SIDE: PRODUCT DETAILS AND OPTIONS
+             ============================================== -->
+
+        <div class="product-details">
+
+            <h2>Elegant Kurti Design</h2>
+
+            <p class="product-description">
+                Discover our beautifully crafted Kurti, designed
+                with attention to detail, comfort, and elegance.
+                Customize your preferred color and size to create
+                an outfit that reflects your personal style.
+            </p>
+
+            <div class="price">
+                ₹1,499
+            </div>
+
+            <!-- ===== COLOR SELECTION ===== -->
+            <div class="option-group">
+
+                <span class="option-title">Select Color</span>
+
+                <div class="color-options">
+
+                    <label class="color-option">
+                        <input type="radio" name="color"
+                               value="Maroon">
+                        Maroon
+                    </label>
+
+                    <label class="color-option">
+                        <input type="radio" name="color"
+                               value="Black">
+                        Black
+                    </label>
+
+                    <label class="color-option">
+                        <input type="radio" name="color"
+                               value="Pink">
+                        Pink
+                    </label>
+
+                    <label class="color-option">
+                        <input type="radio" name="color"
+                               value="Blue">
+                        Blue
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== SIZE SELECTION ===== -->
+            <div class="option-group">
+
+                <span class="option-title">Select Size</span>
+
+                <div class="size-options">
+
+                    <button type="button" class="size-option"
+                            data-size="S">S</button>
+
+                    <button type="button" class="size-option"
+                            data-size="M">M</button>
+
+                    <button type="button" class="size-option"
+                            data-size="L">L</button>
+
+                    <button type="button" class="size-option"
+                            data-size="XL">XL</button>
+
+                    <button type="button" class="size-option"
+                            data-size="XXL">XXL</button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== ORDER BUTTON ===== -->
+            <button type="button" class="order-button"
+                    id="orderButton">
+                Order Now
+            </button>
+
+
+            <!-- ===== ORDER CONFIRMATION / PAYMENT PLACEHOLDER ===== -->
+            <div class="order-message" id="orderMessage"
+                 aria-live="polite">
+            </div>
+
+        </div>
+
+
+        <!-- ==============================================
+             RIGHT SIDE: IMAGE GALLERY
+             ============================================== -->
+
+        <div class="product-gallery">
+
+            <!-- MAIN IMAGE -->
+            <div class="main-image-container">
+
+                <img id="mainImage"
+                     class="main-image"
+                     src="Images/kurti1.jpg"
+                     alt="Elegant Kurti Design - Image 1">
+
+                <!-- LEFT ARROW -->
+                <button type="button"
+                        class="gallery-arrow prev-arrow"
+                        id="prevButton"
+                        aria-label="Previous image">
+                    &#10094;
+                </button>
+
+                <!-- RIGHT ARROW -->
+                <button type="button"
+                        class="gallery-arrow next-arrow"
+                        id="nextButton"
+                        aria-label="Next image">
+                    &#10095;
+                </button>
+
+            </div>
+
+
+            <!-- IMAGE COUNTER -->
+            <div class="image-counter" id="imageCounter">
+                Image 1 of 4
+            </div>
+
+
+            <!-- THUMBNAILS -->
+            <div class="thumbnail-container">
+
+                <button type="button"
+                        class="thumbnail active"
+                        data-index="0"
+                        aria-label="View image 1">
+                    <img src="Images/kurti1.jpg"
+                         alt="Kurti view 1">
+                </button>
+
+                <button type="button"
+                        class="thumbnail"
+                        data-index="1"
+                        aria-label="View image 2">
+                    <img src="Images/kurti2.jpg"
+                         alt="Kurti view 2">
+                </button>
+
+                <button type="button"
+                        class="thumbnail"
+                        data-index="2"
+                        aria-label="View image 3">
+                    <img src="Images/kurti3.jpg"
+                         alt="Kurti view 3">
+                </button>
+
+                <button type="button"
+                        class="thumbnail"
+                        data-index="3"
+                        aria-label="View image 4">
+                    <img src="Images/kurti4.jpg"
+                         alt="Kurti view 4">
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================================
+         JAVASCRIPT: IMAGE GALLERY AND ORDER BUTTON
+         ============================================== -->
+
+    <script>
+
+        /* ===== IMAGE GALLERY ===== */
+
+        const images = [
+            "Images/kurti1.jpg",
+            "Images/kurti2.jpg",
+            "Images/kurti3.jpg",
+            "Images/kurti4.jpg"
+        ];
+
+        let currentIndex = 0;
+
+        const mainImage = document.getElementById("mainImage");
+        const imageCounter = document.getElementById("imageCounter");
+        const thumbnails = document.querySelectorAll(".thumbnail");
+
+        function showImage(index) {
+
+            currentIndex = (index + images.length) % images.length;
+
+            mainImage.src = images[currentIndex];
+
+            mainImage.alt =
+                "Elegant Kurti Design - Image " + (currentIndex + 1);
+
+            imageCounter.textContent =
+                "Image " + (currentIndex + 1) + " of " + images.length;
+
+            thumbnails.forEach((thumbnail, i) => {
+
+                thumbnail.classList.toggle(
+                    "active",
+                    i === currentIndex
+                );
+
+            });
+
+        }
+
+        /* Previous Image */
+        document.getElementById("prevButton").addEventListener(
+            "click", function () {
+                showImage(currentIndex - 1);
+            }
+        );
+
+        /* Next Image */
+        document.getElementById("nextButton").addEventListener(
+            "click", function () {
+                showImage(currentIndex + 1);
+            }
+        );
+
+        /* Thumbnail Click */
+        thumbnails.forEach((thumbnail) => {
+
+            thumbnail.addEventListener("click", function () {
+
+                const index = Number(this.dataset.index);
+
+                showImage(index);
+
+            });
+
+        });
+
+
+        /* ===== SIZE SELECTION ===== */
+
+        let selectedSize = "";
+
+        const sizeButtons = document.querySelectorAll(".size-option");
+
+        sizeButtons.forEach((button) => {
+
+            button.addEventListener("click", function () {
+
+                sizeButtons.forEach((btn) => {
+                    btn.classList.remove("selected");
+                });
+
+                this.classList.add("selected");
+
+                selectedSize = this.dataset.size;
+
+            });
+
+        });
+
+
+        /* ===== ORDER NOW BUTTON ===== */
+
+        document.getElementById("orderButton").addEventListener(
+            "click", function () {
+
+                const selectedColor =
+                    document.querySelector('input[name="color"]:checked');
+
+                const orderMessage =
+                    document.getElementById("orderMessage");
+
+                /* Validate Color */
+                if (!selectedColor) {
+
+                    alert("Please select a color before placing your order.");
+                    return;
+
+                }
+
+                /* Validate Size */
+                if (!selectedSize) {
+
+                    alert("Please select a size before placing your order.");
+                    return;
+
+                }
+
+                /* Show Order Summary */
+                orderMessage.style.display = "block";
+
+                orderMessage.innerHTML = `
+                    <strong>Order Summary</strong><br><br>
+
+                    Product: Elegant Kurti Design<br>
+                    Color: ${selectedColor.value}<br>
+                    Size: ${selectedSize}<br>
+                    Price: ₹1,499<br><br>
+
+                    <strong>Thank you for choosing Darzi Prints!</strong><br>
+
+                    Payment via QR code will be available soon.
+                `;
+
+                orderMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
